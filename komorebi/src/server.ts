@@ -1,8 +1,10 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
+import connectToDatabase from './db';
 
 dotenv.config();
 const app = express();
+connectToDatabase();
 
 app.get('/ping', (request, response) => {
 	response.send('Hello');
